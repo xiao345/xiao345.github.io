@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="vuex"/>
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/default" title="Xiao's Blog">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.1" />
+
+
+
+<link rel="canonical" href="https://xiao345.github.com/2018/09/25/vuex/"/>
+
+
+<meta name="description" content="目录123456789store    modules        auth        login        app    index    actions 根级别的action    mutaions    根级别的mutaion    mutation-types env 配置文件api 封装request,加入拦截逻辑 @/utils/request.js @/api    调用r">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vuex">
+<meta property="og:url" content="https://xiao345.github.com/2018/09/25/vuex/index.html">
+<meta property="og:site_name" content="Xiao&#39;s Blog">
+<meta property="og:description" content="目录123456789store    modules        auth        login        app    index    actions 根级别的action    mutaions    根级别的mutaion    mutation-types env 配置文件api 封装request,加入拦截逻辑 @/utils/request.js @/api    调用r">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-09-25T03:13:48.093Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vuex">
+<meta name="twitter:description" content="目录123456789store    modules        auth        login        app    index    actions 根级别的action    mutaions    根级别的mutaion    mutation-types env 配置文件api 封装request,加入拦截逻辑 @/utils/request.js @/api    调用r">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1" />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+    <title> vuex - Xiao's Blog </title>
+  </head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="/." class="logo">Xiao's Blog</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="/about">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        
+  </nav>
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          vuex
+        
+      </h1>
+
+      <time class="post-time">
+          Sep 25 2018
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">store</span><br><span class="line">    modules</span><br><span class="line">        auth</span><br><span class="line">        login</span><br><span class="line">        app</span><br><span class="line">    index</span><br><span class="line">    actions 根级别的action</span><br><span class="line">    mutaions    根级别的mutaion</span><br><span class="line">    mutation-types</span><br></pre></td></tr></table></figure>
+<h2 id="env-配置文件"><a href="#env-配置文件" class="headerlink" title="env 配置文件"></a>env 配置文件</h2><h2 id="api"><a href="#api" class="headerlink" title="api"></a>api</h2><ol>
+<li>封装request,加入拦截逻辑 @/utils/request.js</li>
+<li>@/api    调用reqest封装服务api接口为promise</li>
+</ol>
+<h2 id="index"><a href="#index" class="headerlink" title="index"></a>index</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">vue.use(Vuex);</span><br><span class="line"></span><br><span class="line">const debug = process.env.NODE_ENV !== &apos;production&apos;;</span><br><span class="line"></span><br><span class="line">export default new Vuex.Store(&#123;</span><br><span class="line">    namespaced: true,   // 开启命名空间</span><br><span class="line">    modules: &#123;</span><br><span class="line">        auth</span><br><span class="line">    &#125;,</span><br><span class="line">    strict: debug,</span><br><span class="line">    middlewares: debug ? [createLogger()] : []</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="mutation-types"><a href="#mutation-types" class="headerlink" title="mutation-types"></a>mutation-types</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// auth</span><br><span class="line">export const AUTHORIZE = &apos;AUTHORIZE&apos;</span><br><span class="line">// app</span><br><span class="line">export const SET_APPS = &apos;SET_APPS&apos;</span><br><span class="line">export const SET_APP = &apos;SET_APP&apos;</span><br></pre></td></tr></table></figure>
+<h2 id="modules"><a href="#modules" class="headerlink" title="modules"></a>modules</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">import * as api from &apos;@/api/app&apos;</span><br><span class="line">import * as types from &apos;../mutation-types&apos;</span><br><span class="line">export default &#123;</span><br><span class="line">    state: &#123;</span><br><span class="line">        list: [],</span><br><span class="line">        detail: &#123;</span><br><span class="line">            id: 1,</span><br><span class="line">            name: &apos;xxx&apos;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    // mutation一定是同步的</span><br><span class="line">    mutations: &#123;</span><br><span class="line">        [types.SET_APPS] (state, apps) &#123;</span><br><span class="line">            state.list = apps.data</span><br><span class="line">            commit(types.HIDE_MESSAGE)  // 隐藏进度条</span><br><span class="line">        &#125;,</span><br><span class="line">        [types.SET_APP] (state, app) &#123;</span><br><span class="line">            state.detail = app</span><br><span class="line">            commit(types.HIDE_MESSAGE)  // 隐藏进度条</span><br><span class="line">        &#125;,</span><br><span class="line">        [types.DELETE_APP] (state, app) &#123;</span><br><span class="line">            state.detail = &#123;&#125;</span><br><span class="line">            state.list.$remove(app)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    // action可以异步</span><br><span class="line">    actions: &#123;</span><br><span class="line">        // 显示加载条 dispatch(&apos;SHOW_PROGRAM&apos;, &apos;message.....&apos;)    全局mutation</span><br><span class="line">        // action里调用api-promise,成功dispatch-成功的mutation做处理(此mutaion上处理好后隐藏加载条 dispatch(&apos;HIDE_PROGRAM&apos;))，失败调用失败的mutation做处理，并隐藏加载条</span><br><span class="line">        async getApps (&#123;commit&#125;, params) &#123;</span><br><span class="line">            let apps = await api.getList(params)</span><br><span class="line">            commit(types.SET_APPS, apps)</span><br><span class="line">        &#125;,</span><br><span class="line">        // action里可以通过dispatch调用其他action</span><br><span class="line">        async getApp (&#123;dispatch, commit&#125;,id) &#123;</span><br><span class="line">            await dispatch(&apos;getApps&apos;)</span><br><span class="line">            // 使用async/await, 在request里封装进度条启动/关闭</span><br><span class="line">            let app = await api.getDetail(id)</span><br><span class="line">            commit(types.SET_APP, app)</span><br><span class="line">        &#125;,</span><br><span class="line">        async deleteApp (&#123;dispatch&#125;, app) &#123;</span><br><span class="line">            let app = await api.deleteApp(app.id)</span><br><span class="line">            commit(types.CLEAR_FORM)</span><br><span class="line">            commit(types.DELETE_APP, app)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    getters: &#123;</span><br><span class="line">        apps: state =&gt; state.list,</span><br><span class="line">        app: state =&gt; state.detail</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="view"><a href="#view" class="headerlink" title="view"></a>view</h2><p>列表页<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import &#123; mapState, mapActions, mapGetters &#125; from &apos;vuex&apos;</span><br><span class="line">export default &#123;</span><br><span class="line">  mounted () &#123;</span><br><span class="line">    this.getApps()   // 列表接口，首页和分页应该有区别</span><br><span class="line">  &#125;,</span><br><span class="line">  computed () &#123;</span><br><span class="line">    ...mapGetters([&apos;app/apps&apos;])</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    ...mapActions([&apos;app/getApps&apos;])</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<p>详情页<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<p>添加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<p>修改<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<h2 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h2><h2 id="常用模块"><a href="#常用模块" class="headerlink" title="常用模块"></a>常用模块</h2><h3 id="Message全局组件"><a href="#Message全局组件" class="headerlink" title="Message全局组件"></a>Message全局组件</h3><p>方便提示信息</p>
+<p>### </p>
+<h2 id="严格模式"><a href="#严格模式" class="headerlink" title="严格模式"></a>严格模式</h2><p>开启严格模式，仅需要在创建store的时候传入strict：true：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const store = new Vuex.Store(&#123;</span><br><span class="line">    //...</span><br><span class="line">    strict: true</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://blog.csdn.net/HeliumLau/article/details/70147875" target="_blank" rel="noopener">https://blog.csdn.net/HeliumLau/article/details/70147875</a></p>
+<p><a href="http://www.jb51.net/article/124618.htm" target="_blank" rel="noopener">http://www.jb51.net/article/124618.htm</a></p>
+
+            </div>
+          
+
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2012 -
+    
+    2018
+    <span class="footer-author">Xiao Lee.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a> and <a class="theme-link" href="https://github.com/henryhuang/hexo-theme-polarbearsimple">Polar Bear Simple</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="/js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=1.1"></script>
+
+  </body>
+</html>

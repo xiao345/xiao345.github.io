@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="vagrant"/>
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/default" title="Xiao's Blog">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.1" />
+
+
+
+<link rel="canonical" href="https://xiao345.github.com/2018/05/23/vagrant/"/>
+
+
+<meta name="description" content="天朝vagrant安装方式 vagrant init XXX vagrant up 找到box下载地址, 如 1https://vagrantcloud.com/ubuntu/boxes/xenial64/versions/20180522.0.0/providers/virtualbox.box  用迅雷下载box  编写metadata.json 12345678910&amp;#123;    &amp;q">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vagrant">
+<meta property="og:url" content="https://xiao345.github.com/2018/05/23/vagrant/index.html">
+<meta property="og:site_name" content="Xiao&#39;s Blog">
+<meta property="og:description" content="天朝vagrant安装方式 vagrant init XXX vagrant up 找到box下载地址, 如 1https://vagrantcloud.com/ubuntu/boxes/xenial64/versions/20180522.0.0/providers/virtualbox.box  用迅雷下载box  编写metadata.json 12345678910&amp;#123;    &amp;q">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-23T13:55:49.835Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vagrant">
+<meta name="twitter:description" content="天朝vagrant安装方式 vagrant init XXX vagrant up 找到box下载地址, 如 1https://vagrantcloud.com/ubuntu/boxes/xenial64/versions/20180522.0.0/providers/virtualbox.box  用迅雷下载box  编写metadata.json 12345678910&amp;#123;    &amp;q">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1" />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+    <title> vagrant - Xiao's Blog </title>
+  </head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="/." class="logo">Xiao's Blog</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="/about">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        
+  </nav>
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          vagrant
+        
+      </h1>
+
+      <time class="post-time">
+          May 23 2018
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <h2 id="天朝vagrant安装方式"><a href="#天朝vagrant安装方式" class="headerlink" title="天朝vagrant安装方式"></a>天朝vagrant安装方式</h2><ol>
+<li>vagrant init XXX</li>
+<li><p>vagrant up 找到box下载地址, 如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://vagrantcloud.com/ubuntu/boxes/xenial64/versions/20180522.0.0/providers/virtualbox.box</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用迅雷下载box</p>
+</li>
+<li><p>编写metadata.json</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;name&quot;: &quot;laravel/homestead&quot;,    // 镜像名</span><br><span class="line">    &quot;versions&quot;: [&#123;</span><br><span class="line">        &quot;version&quot;: &quot;0.2.7&quot;,				//这里是版本号，自己根据实际版本号修改，在上图中的有版本号，自己找，（ v0.2.7字样就是版本号）。</span><br><span class="line">        &quot;providers&quot;: [&#123;</span><br><span class="line">            &quot;name&quot;: &quot;virtualbox&quot;,       // 驱动名</span><br><span class="line">            &quot;url&quot;: &quot;file:///D:/virtualbox.box&quot;  // 下载的box文件地址</span><br><span class="line">        &#125;]</span><br><span class="line">    &#125;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>vagrant box add metadata.json</p>
+</li>
+</ol>
+<h2 id="Homestead"><a href="#Homestead" class="headerlink" title="Homestead"></a>Homestead</h2><ol>
+<li>git clone <a href="https://github.com/laravel/homestead.git" target="_blank" rel="noopener">https://github.com/laravel/homestead.git</a> Homestead</li>
+<li>bash init.sh // linux</li>
+<li>init.bat // windows</li>
+<li>vagrant box list 先确定已下载了laravel/homestead的box</li>
+<li>vagrant up</li>
+<li>vagrant ssh<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh     2222    vagrant/vagrant</span><br><span class="line">mysql   33060   homestead/secret</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h2><p>homestead 不能用root账户</p>
+<p>用户名：vagrant<br>密   码：vagrant<br>root帐号密码：vagrant</p>
+<p>//更新<br>用vagrant创建的ubuntu系统，root账号密码默认是没有设置的，需要手动设置<br>sudo passwd</p>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><ol>
+<li>修改homestead.yaml后，vagrant provision</li>
+<li></li>
+</ol>
+
+            </div>
+          
+
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2012 -
+    
+    2018
+    <span class="footer-author">Xiao Lee.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a> and <a class="theme-link" href="https://github.com/henryhuang/hexo-theme-polarbearsimple">Polar Bear Simple</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="/js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=1.1"></script>
+
+  </body>
+</html>

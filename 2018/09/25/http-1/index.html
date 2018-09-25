@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="http协议1"/>
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/default" title="Xiao's Blog">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.1" />
+
+
+
+<link rel="canonical" href="https://xiao345.github.com/2018/09/25/http-1/"/>
+
+
+<meta name="description" content="Resource URL Request Response Headers HTTP请求的是资源Resource 资源由URL（统一资源定位符）决定 静态资源和动态资源 用curl作请求 request line 请求行 请求头，由key-value组成 响应头，也由key-value组成 Content-Type: 告诉浏览器为什么资源，为html则渲染后输出 响应的主体内容body  HTTP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="http协议1">
+<meta property="og:url" content="https://xiao345.github.com/2018/09/25/http-1/index.html">
+<meta property="og:site_name" content="Xiao&#39;s Blog">
+<meta property="og:description" content="Resource URL Request Response Headers HTTP请求的是资源Resource 资源由URL（统一资源定位符）决定 静态资源和动态资源 用curl作请求 request line 请求行 请求头，由key-value组成 响应头，也由key-value组成 Content-Type: 告诉浏览器为什么资源，为html则渲染后输出 响应的主体内容body  HTTP">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-09-25T03:16:10.066Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="http协议1">
+<meta name="twitter:description" content="Resource URL Request Response Headers HTTP请求的是资源Resource 资源由URL（统一资源定位符）决定 静态资源和动态资源 用curl作请求 request line 请求行 请求头，由key-value组成 响应头，也由key-value组成 Content-Type: 告诉浏览器为什么资源，为html则渲染后输出 响应的主体内容body  HTTP">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1" />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+    <title> http协议1 - Xiao's Blog </title>
+  </head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="/." class="logo">Xiao's Blog</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="/about">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        
+  </nav>
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          http协议1
+        
+      </h1>
+
+      <time class="post-time">
+          Sep 25 2018
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <h1 id="Resource-URL-Request-Response-Headers"><a href="#Resource-URL-Request-Response-Headers" class="headerlink" title="Resource URL Request Response Headers"></a>Resource URL Request Response Headers</h1><ol>
+<li>HTTP请求的是资源Resource</li>
+<li>资源由URL（统一资源定位符）决定</li>
+<li>静态资源和动态资源</li>
+<li>用curl作请求<br> request line 请求行<br> 请求头，由key-value组成<br> 响应头，也由key-value组成<br> Content-Type: 告诉浏览器为什么资源，为html则渲染后输出<br> 响应的主体内容body</li>
+</ol>
+<h2 id="HTTP请求"><a href="#HTTP请求" class="headerlink" title="HTTP请求"></a>HTTP请求</h2><ol>
+<li>请求行 request line</li>
+<li>请求头部 Headers</li>
+<li>负载数据 payload –data<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -X -H &apos;API-Key: yourkey&apos; -G --data &quot;SUBID=123456&quot; GET http://www.baidu.com -v</span><br><span class="line">参考 https://www.vultr.com/api</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="HTTP响应的格式"><a href="#HTTP响应的格式" class="headerlink" title="HTTP响应的格式"></a>HTTP响应的格式</h2><ol>
+<li><p>状态 status line</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">基本格式： HTTP[版本号] [状态码] [状态信息]</span><br><span class="line">比如： HTTP1.1 200 OK</span><br><span class="line"></span><br><span class="line">状态码</span><br><span class="line">2xx: 一般来说是成功的状态</span><br><span class="line">3xx: 重定向或资源未被修改</span><br><span class="line">4xx: 客户端请求错误 401 403 404等</span><br><span class="line">5xx: 服务端错误 502 503 504 等</span><br><span class="line">https://httpstatuses.com/</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>响应头部 Headers<br>格式：[header名]: [header值]</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt; Server: nginx/1.13.6</span><br><span class="line">&lt; Date: Wed, 14 Mar 2018 02:35:46 GMT</span><br><span class="line">&lt; Content-Type: text/html; charset=utf-8</span><br><span class="line">&lt; Content-Length: 251</span><br><span class="line">&lt; Connection: keep-alive</span><br><span class="line">&lt; X-Powered-By: PHP/5.6.30</span><br><span class="line">&lt; Expires: Wed, 11 Jan 1984 05:00:00 GMT</span><br><span class="line">&lt; Cache-Control: no-cache, must-revalidate, max-age=0</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>响应主体(主体内容) payload</p>
+</li>
+</ol>
+<p>HTTP是无状态的协议</p>
+<ol>
+<li>对于之前的交互没有记录</li>
+<li>每次交互能用的信息就只有这次交互所携带的信息<br>问： cookie和session？</li>
+</ol>
+<h2 id="HTTP查询字符串传参数"><a href="#HTTP查询字符串传参数" class="headerlink" title="HTTP查询字符串传参数"></a>HTTP查询字符串传参数</h2><h2 id="HTTP-POST表单提交数据"><a href="#HTTP-POST表单提交数据" class="headerlink" title="HTTP POST表单提交数据"></a>HTTP POST表单提交数据</h2><ol>
+<li>form表单提交, Content-type: application/x-www-form-urlencoded</li>
+<li>file upload 文件上传，Content-type: multipart/form-data</li>
+<li>fetch/axios上传，Content-type: application/json</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=&quot;/login&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="session"><a href="#session" class="headerlink" title="session"></a>session</h2><ol>
+<li>session会话</li>
+<li>session过期</li>
+<li>session劫持（httponly，不能用js获取）</li>
+</ol>
+<h2 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h2><p>301：用于更换域名<br>302: 临时重定向，用于做失效页面跳转</p>
+<h2 id="https"><a href="#https" class="headerlink" title="https"></a>https</h2><p>alphassl.com</p>
+<h2 id="CORS"><a href="#CORS" class="headerlink" title="CORS"></a>CORS</h2><p>同源策略</p>
+<h2 id="CSRF"><a href="#CSRF" class="headerlink" title="CSRF"></a>CSRF</h2><p>跨站请求伪造</p>
+<ol>
+<li>验证码</li>
+<li>referer</li>
+</ol>
+<h2 id="XSS"><a href="#XSS" class="headerlink" title="XSS"></a>XSS</h2><blockquote>
+<p>通过输入将js保存到服务器，这样访问页面时就注入了对应的js脚本，避开了同源策略</p>
+<ol>
+<li>删除</li>
+<li>转义（htmlpurifier）</li>
+</ol>
+</blockquote>
+<h2 id="反射型XSS"><a href="#反射型XSS" class="headerlink" title="反射型XSS"></a>反射型XSS</h2><h2 id="sql注入"><a href="#sql注入" class="headerlink" title="sql注入"></a>sql注入</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">select * from users where name=&apos;zhangsan&apos; --&apos; and password=&apos;123456&apos;</span><br><span class="line">zhangsan&apos; --</span><br><span class="line"></span><br><span class="line">select * from users where name=&apos;&apos;; drop table users; --&apos; and password=&apos;123456&apos;</span><br><span class="line">&apos;; drop table users; --</span><br><span class="line"></span><br><span class="line">select * from articles where score&lt;60 and title like &apos;%php%&apos;</span><br><span class="line">select * from articles where score&lt;60 and title like &apos;%&apos; or 1=1 --%&apos;</span><br><span class="line">&apos; or 1=1 --</span><br><span class="line"></span><br><span class="line">$key =- chr(0xdf).&quot;&apos;|| 1=1 --&quot;;</span><br><span class="line">$key = addslashes($key);</span><br><span class="line">echo $key;</span><br></pre></td></tr></table></figure>
+<p>document.getElementById(‘ipt-search-key’).value = <a href="mailto:&#39;xiao345@gmail.com" target="_blank" rel="noopener">&#39;xiao345@gmail.com</a>‘<br>document.getElementById(‘amount’).value = ‘100’<br>document.getElementById(‘reason’).value = ‘xxxx’<br>document.getElementsByClassName(‘ui-button-text’)[0].click()</p>
+
+            </div>
+          
+
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2012 -
+    
+    2018
+    <span class="footer-author">Xiao Lee.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a> and <a class="theme-link" href="https://github.com/henryhuang/hexo-theme-polarbearsimple">Polar Bear Simple</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="/js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=1.1"></script>
+
+  </body>
+</html>

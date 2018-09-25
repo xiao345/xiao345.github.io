@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="linux-shell"/>
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/default" title="Xiao's Blog">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.1" />
+
+
+
+<link rel="canonical" href="https://xiao345.github.com/2018/03/14/linux-shell/"/>
+
+
+<meta name="description" content="书http://billie66.github.io/TLCL/book/ 快捷键1234567less index.htmlg 跳转到文件头G 跳转到文件尾j 向下翻k 向上翻/ 字符查找q 退出 压缩与解压缩12345678910unzip xxx.zipzip -r xxx.zip xxxdirwget http://ftp.gnu.org/gnu/wget/wget-1.19.tar.gz">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux-shell">
+<meta property="og:url" content="https://xiao345.github.com/2018/03/14/linux-shell/index.html">
+<meta property="og:site_name" content="Xiao&#39;s Blog">
+<meta property="og:description" content="书http://billie66.github.io/TLCL/book/ 快捷键1234567less index.htmlg 跳转到文件头G 跳转到文件尾j 向下翻k 向上翻/ 字符查找q 退出 压缩与解压缩12345678910unzip xxx.zipzip -r xxx.zip xxxdirwget http://ftp.gnu.org/gnu/wget/wget-1.19.tar.gz">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-22T00:01:53.548Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="linux-shell">
+<meta name="twitter:description" content="书http://billie66.github.io/TLCL/book/ 快捷键1234567less index.htmlg 跳转到文件头G 跳转到文件尾j 向下翻k 向上翻/ 字符查找q 退出 压缩与解压缩12345678910unzip xxx.zipzip -r xxx.zip xxxdirwget http://ftp.gnu.org/gnu/wget/wget-1.19.tar.gz">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1" />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+    <title> linux-shell - Xiao's Blog </title>
+  </head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="/." class="logo">Xiao's Blog</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="/about">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        
+  </nav>
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          linux-shell
+        
+      </h1>
+
+      <time class="post-time">
+          Mar 14 2018
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <h2 id="书"><a href="#书" class="headerlink" title="书"></a>书</h2><p><a href="http://billie66.github.io/TLCL/book/" target="_blank" rel="noopener">http://billie66.github.io/TLCL/book/</a></p>
+<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">less index.html</span><br><span class="line">g 跳转到文件头</span><br><span class="line">G 跳转到文件尾</span><br><span class="line">j 向下翻</span><br><span class="line">k 向上翻</span><br><span class="line">/ 字符查找</span><br><span class="line">q 退出</span><br></pre></td></tr></table></figure>
+<h2 id="压缩与解压缩"><a href="#压缩与解压缩" class="headerlink" title="压缩与解压缩"></a>压缩与解压缩</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">unzip xxx.zip</span><br><span class="line">zip -r xxx.zip xxxdir</span><br><span class="line"></span><br><span class="line">wget http://ftp.gnu.org/gnu/wget/wget-1.19.tar.gz</span><br><span class="line">tar zxvf wget-1.19.tar.gz</span><br><span class="line">tar zcvf wget-1.19.tar.gz wget-1.19</span><br><span class="line"></span><br><span class="line">wget http://ftp.gnu.org/gnu/wget/wget-1.11.4.tar.bz2</span><br><span class="line">tar jxvf wget-1.11.4.tar.bz2</span><br><span class="line">tar jcvf wget-1.11.4.tar.bz2 wget-1.11.4</span><br></pre></td></tr></table></figure>
+<h2 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ls /bin &gt; output.txt</span><br><span class="line">ls /bin | grep less  查找之前记录中的less相关的文件</span><br></pre></td></tr></table></figure>
+<ol>
+<li>三个重要的文件（程序从标准输入文件读数据，处理完成后放到标准输出文件中，错误则放到标准输出文件中）<br> 标准输入文件 stdin 0   键盘输入的内容进入这里<br> 标准输出文件 stdout 1     显示在屏幕上<br> 标准错误输出文件 stderr 2   显示在屏幕上</li>
+<li>拐弯的各种方式<br> redirect stdout   &gt;<br> cat file1   ‘hello’<br> cat file2   ‘world’<br> cat file1&gt; file<br> cat file    ‘hello’<br> cat file2 &gt;&gt;file<br> cat file     ‘hello world’<br> 一般标准错误会直接输出，如果不想输出则用 2&gt;<br> 标准错误输出的文件重定符 2&gt;<br> 如： ls skdfajkdkfals 2&gt; output.txt</li>
+<li>管道线 pipline<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cat files.txt</span><br><span class="line">d.txt</span><br><span class="line">a.txt</span><br><span class="line">f.html</span><br><span class="line">b.txt</span><br><span class="line">b.txt</span><br><span class="line"></span><br><span class="line">cat files.txt | uniq | grep txt | sort</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="Permission-待补充"><a href="#Permission-待补充" class="headerlink" title="Permission(待补充)"></a>Permission(待补充)</h2><h3 id="三种权限"><a href="#三种权限" class="headerlink" title="三种权限"></a>三种权限</h3><ol>
+<li>reading  r</li>
+<li>writing  w</li>
+<li>executing    x<h3 id="文件模式"><a href="#文件模式" class="headerlink" title="文件模式"></a>文件模式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ ls -l a.txt</span><br><span class="line">-rw-rw-r-- 1 xiao xiao 0 Aug 30 11:57 a.txt</span><br><span class="line">file type: - file   l sym link（符号连接）    d directory</span><br><span class="line">link number: 硬连接数量</span><br><span class="line">owner</span><br><span class="line">group</span><br><span class="line">size in byte</span><br><span class="line">last modify time</span><br><span class="line"></span><br><span class="line">owner   group   world</span><br><span class="line">rw-     rw-     r--</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="chmod"><a href="#chmod" class="headerlink" title="chmod"></a>chmod</h3><h2 id="process-进程"><a href="#process-进程" class="headerlink" title="process 进程"></a>process 进程</h2><h3 id="获取进程号"><a href="#获取进程号" class="headerlink" title="获取进程号"></a>获取进程号</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps aux | less 查看当前所有进程</span><br></pre></td></tr></table></figure>
+<h3 id="后台执行"><a href="#后台执行" class="headerlink" title="后台执行"></a>后台执行</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim &amp;   后台运行</span><br><span class="line">bg  后台任务</span><br><span class="line">fg  前台任务</span><br></pre></td></tr></table></figure>
+<h3 id="kill"><a href="#kill" class="headerlink" title="kill"></a>kill</h3><h2 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h2><h3 id="locate-在系统全局范围内定位文件，原理查找数据库，每天更新一次，如果需要查找当天的文件，可以执行-updatedb-命令"><a href="#locate-在系统全局范围内定位文件，原理查找数据库，每天更新一次，如果需要查找当天的文件，可以执行-updatedb-命令" class="headerlink" title="locate  在系统全局范围内定位文件，原理查找数据库，每天更新一次，如果需要查找当天的文件，可以执行 updatedb 命令"></a>locate  在系统全局范围内定位文件，原理查找数据库，每天更新一次，如果需要查找当天的文件，可以执行 updatedb 命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">locate xxx</span><br><span class="line">locate --regexp xxx 可以加正则表达式</span><br></pre></td></tr></table></figure>
+<h3 id="find-在目录范围内定位文件"><a href="#find-在目录范围内定位文件" class="headerlink" title="find    在目录范围内定位文件"></a>find    在目录范围内定位文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">find .  显示目录范围内的所有文件</span><br><span class="line">find . | grep .txt</span><br><span class="line">find . -type f  所有文件</span><br><span class="line">find . -type d  所有目录</span><br><span class="line">find . -type f -exec ls -l &apos;&#123;&#125;&apos; &apos;;&apos;</span><br><span class="line">find . -type f -exec grep hello &apos;&#123;&#125;&apos; &apos;;&apos; -print</span><br></pre></td></tr></table></figure>
+<h3 id="grep-在字符串内定位"><a href="#grep-在字符串内定位" class="headerlink" title="grep    在字符串内定位"></a>grep    在字符串内定位</h3><h3 id="符号连接"><a href="#符号连接" class="headerlink" title="符号连接"></a>符号连接</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s happygrep xxx 将happygrep命令软连接为xxx</span><br></pre></td></tr></table></figure>
+<h2 id="网络操作"><a href="#网络操作" class="headerlink" title="网络操作"></a>网络操作</h2><h3 id="远程操作-ssh"><a href="#远程操作-ssh" class="headerlink" title="远程操作 ssh"></a>远程操作 ssh</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen    创建公钥、私钥</span><br><span class="line">$ cd ~/.ssh &amp; ssh-copy-id root@124.26.59.174    </span><br><span class="line"></span><br><span class="line">$ tmux  一个强大的操作编辑器，一个窗口里操作多个终端，tmux让我们的命令行操作更加高效</span><br></pre></td></tr></table></figure>
+<h3 id="数据传输-rsync（remote"><a href="#数据传输-rsync（remote" class="headerlink" title="数据传输 rsync（remote"></a>数据传输 rsync（remote</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">rsync -r mydir root@192.168.25.64:  本地文件同步到服务器</span><br><span class="line">rsync -r root@192.168.25.64:mydir .     服务器文件同步到本地硬盘</span><br><span class="line">rsync -av mydir/ root@192.168.25.64:mydir/   同步本地和服务器文件夹，有新生成文件会同步新文件</span><br><span class="line">rsync -av --delete mydir/ root@192.168.25.64:mydir/     同步本地和服务器文件夹，有新生成文件会同步新文件，有删除的文件同时删除服务器的文件</span><br><span class="line">rsync -av --delete mydir/ root@192.168.25.64:mydir/ --dry-run     同步本地和服务器文件夹，有新生成文件会同步新文件，有删除的文件同时删除服务器的文件(同步之前检查是否有本地没有的服务器文件)</span><br></pre></td></tr></table></figure>
+<h2 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h2><h3 id="手动安装"><a href="#手动安装" class="headerlink" title="手动安装"></a>手动安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">编译好的包安装</span><br><span class="line">2. 复制解压文件夹到合适的目录下</span><br><span class="line">3. 把命令软连接到$PATH</span><br><span class="line"></span><br><span class="line">未编译包安装</span><br><span class="line">1. ./configure</span><br><span class="line">2. make         (gcc xxx.c -o xxx)</span><br><span class="line">3. sudo make install    (mv xxx /bin)</span><br></pre></td></tr></table></figure>
+<h3 id="deb包"><a href="#deb包" class="headerlink" title="deb包"></a>deb包</h3><ol>
+<li>程序本身</li>
+<li>配置文件</li>
+<li>安装位置</li>
+<li>依赖关系<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i xxxx.deb</span><br><span class="line"></span><br><span class="line">dpkg -S xxx     查看这个文件来自哪个包</span><br><span class="line">dpkg -l     系统上所有deb包</span><br><span class="line">dpkg -L xxx     xxx这个包在系统上安装了哪些文件</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="从apt-get仓库安装"><a href="#从apt-get仓库安装" class="headerlink" title="从apt-get仓库安装"></a>从apt-get仓库安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">apt-get install xxx</span><br><span class="line">apt-get remove xxx</span><br><span class="line">apt-get purge xxx   连同配置文件一起删除</span><br><span class="line">apt-cache search xxx|less     模糊搜索软件包</span><br></pre></td></tr></table></figure>
+<h2 id="shell脚本编程"><a href="#shell脚本编程" class="headerlink" title="shell脚本编程"></a>shell脚本编程</h2><h3 id="指定解析器"><a href="#指定解析器" class="headerlink" title="指定解析器"></a>指定解析器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env bash</span><br><span class="line">#!/usr/bin/env pythen</span><br><span class="line">#!/usr/bin/env ruby</span><br></pre></td></tr></table></figure>
+<h3 id="语句即命令"><a href="#语句即命令" class="headerlink" title="语句即命令"></a>语句即命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ echo &quot;hello&quot;</span><br><span class="line">hello</span><br><span class="line"></span><br><span class="line">#!/usr/bin/env ruby</span><br><span class="line">echo &quot;hello&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="位置参数"><a href="#位置参数" class="headerlink" title="位置参数"></a>位置参数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">hello.sh</span><br><span class="line"></span><br><span class="line">#!/usr/bin/env bash</span><br><span class="line">echo &quot;</span><br><span class="line">Number of arguments: $#</span><br><span class="line">The program name is: $0</span><br><span class="line">The first argument is: $1</span><br><span class="line">&quot;</span><br><span class="line"></span><br><span class="line">$ hello.sh a.txt b.txt</span><br><span class="line">    $0      $1      $2      $# 一共有多少个参数（2）</span><br></pre></td></tr></table></figure>
+<h3 id="脚本不在当前shell执行"><a href="#脚本不在当前shell执行" class="headerlink" title="脚本不在当前shell执行"></a>脚本不在当前shell执行</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source hello.sh     可以让shell脚本的命令在当前目录下执行</span><br></pre></td></tr></table></figure>
+<h3 id="循环控制"><a href="#循环控制" class="headerlink" title="循环控制"></a>循环控制</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/env bash</span><br><span class="line">cd $1</span><br><span class="line">echo I am in `pwd`</span><br><span class="line">for file in `ls`</span><br><span class="line">do </span><br><span class="line">    mv $file $file.txt</span><br><span class="line">done</span><br></pre></td></tr></table></figure>
+<h3 id="远程执行"><a href="#远程执行" class="headerlink" title="远程执行"></a>远程执行</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -t root@127.2059.174 &apos;touch a.txt&apos;</span><br></pre></td></tr></table></figure>
+<h3 id="确认执行"><a href="#确认执行" class="headerlink" title="确认执行"></a>确认执行</h3><h3 id="其他语言写脚本"><a href="#其他语言写脚本" class="headerlink" title="其他语言写脚本"></a>其他语言写脚本</h3>
+            </div>
+          
+
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2012 -
+    
+    2018
+    <span class="footer-author">Xiao Lee.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a> and <a class="theme-link" href="https://github.com/henryhuang/hexo-theme-polarbearsimple">Polar Bear Simple</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="/js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=1.1"></script>
+
+  </body>
+</html>

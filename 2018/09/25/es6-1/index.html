@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="es6-1"/>
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/default" title="Xiao's Blog">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.1" />
+
+
+
+<link rel="canonical" href="https://xiao345.github.com/2018/09/25/es6-1/"/>
+
+
+<meta name="description" content="for of loop 可以解决通过对原型赋值或增加属性的影响 可以在循环过程做判断12345678Array.prototype.first = function () &amp;#123;    return this[0];&amp;#125;const fruits = [&amp;apos;Apple&amp;apos;, &amp;apos;Banana&amp;apos;, &amp;apos;Orange&amp;apos;, &amp;apos;Ma">
+<meta property="og:type" content="article">
+<meta property="og:title" content="es6-1">
+<meta property="og:url" content="https://xiao345.github.com/2018/09/25/es6-1/index.html">
+<meta property="og:site_name" content="Xiao&#39;s Blog">
+<meta property="og:description" content="for of loop 可以解决通过对原型赋值或增加属性的影响 可以在循环过程做判断12345678Array.prototype.first = function () &amp;#123;    return this[0];&amp;#125;const fruits = [&amp;apos;Apple&amp;apos;, &amp;apos;Banana&amp;apos;, &amp;apos;Orange&amp;apos;, &amp;apos;Ma">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-09-25T03:18:53.579Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="es6-1">
+<meta name="twitter:description" content="for of loop 可以解决通过对原型赋值或增加属性的影响 可以在循环过程做判断12345678Array.prototype.first = function () &amp;#123;    return this[0];&amp;#125;const fruits = [&amp;apos;Apple&amp;apos;, &amp;apos;Banana&amp;apos;, &amp;apos;Orange&amp;apos;, &amp;apos;Ma">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1" />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+    <title> es6-1 - Xiao's Blog </title>
+  </head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="/." class="logo">Xiao's Blog</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="/about">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        
+  </nav>
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          es6-1
+        
+      </h1>
+
+      <time class="post-time">
+          Sep 25 2018
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <h2 id="for-of-loop"><a href="#for-of-loop" class="headerlink" title="for of loop"></a>for of loop</h2><ol>
+<li>可以解决通过对原型赋值或增加属性的影响</li>
+<li>可以在循环过程做判断<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.first = function () &#123;</span><br><span class="line">    return this[0];</span><br><span class="line">&#125;</span><br><span class="line">const fruits = [&apos;Apple&apos;, &apos;Banana&apos;, &apos;Orange&apos;, &apos;Mango&apos;]</span><br><span class="line">fruits.describe = &apos;My favorite fruits&apos;</span><br><span class="line">for (const index of fruits) &#123;</span><br><span class="line">    console.log(index)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>功能很强大，但目前不支持对象</p>
+<h2 id="Array-from"><a href="#Array-from" class="headerlink" title="Array.from()"></a>Array.from()</h2><p>方法用于将两类对象转为真正的数组：类似数组的对象（array-like object）和可遍历（iterable）的对象（包括 ES6 新增的数据结构 Set 和 Map）。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function sum () &#123;</span><br><span class="line">    console.log(arguments)</span><br><span class="line">    return Array.from(arguments).reduce((prev, curr) =&gt; prev + curr, 0)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Array-of"><a href="#Array-of" class="headerlink" title="Array.of()"></a>Array.of()</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Array.of(32,234,32,345,34)</span><br><span class="line">[32,234,32,345,34]</span><br></pre></td></tr></table></figure>
+<h2 id="Array-Methods"><a href="#Array-Methods" class="headerlink" title="Array Methods"></a>Array Methods</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// .find()  寻找数组里的元素</span><br><span class="line"></span><br><span class="line">// .findIndex() 寻找数组里元素的索引</span><br><span class="line"></span><br><span class="line">// .some()  部分满足返回true</span><br><span class="line"></span><br><span class="line">// .every() 全部满足才返回true</span><br></pre></td></tr></table></figure>
+<h2 id="Reset-Params-剩余参数"><a href="#Reset-Params-剩余参数" class="headerlink" title="Reset Params (剩余参数)"></a>Reset Params (剩余参数)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function sum (...numbers) &#123;</span><br><span class="line">    return numbers.reduce((prev, curr) =&gt; prev + curr, 0)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(sum(2,324,3443,2))</span><br><span class="line"></span><br><span class="line">// -------------变量解构---------------</span><br><span class="line">const player = [&apos;xiao&apos;, 123, 5.4,12,34,2,45];</span><br><span class="line">const [name, id, ...scores] = player;</span><br><span class="line">console.log(name, id, scores)</span><br></pre></td></tr></table></figure>
+<h2 id="Spread-Operator-Intro"><a href="#Spread-Operator-Intro" class="headerlink" title="Spread Operator Intro"></a>Spread Operator Intro</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const youngers = [&apos;George&apos;, &apos;John&apos;, &apos;Thomas&apos;]</span><br><span class="line">const olders = [&apos;James&apos;, &apos;Adrew&apos;, &apos;Martin&apos;]</span><br><span class="line">let members = [...youngers, &apos;Mary&apos;, ...olders]</span><br><span class="line">console.log(members)</span><br></pre></td></tr></table></figure>
+<h2 id="object-literal-upgrade"><a href="#object-literal-upgrade" class="headerlink" title="object literal upgrade"></a>object literal upgrade</h2><p>变量和属性同名时，可以只写一个<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">const name = &apos;xiao&apos;</span><br><span class="line">const age = 2</span><br><span class="line">const birthday = &apos;2016-03&apos;</span><br><span class="line"></span><br><span class="line">const Person = &#123;</span><br><span class="line">    name,</span><br><span class="line">    age,</span><br><span class="line">    birthday: birthday，</span><br><span class="line">    greet: function () &#123;</span><br><span class="line">        alter(`Hello $&#123;this.name&#125;`)</span><br><span class="line">    &#125;,</span><br><span class="line">    getName () &#123;</span><br><span class="line">        console.log(&apos;getName)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(Person)</span><br><span class="line"></span><br><span class="line">// ---------------------</span><br><span class="line"></span><br><span class="line">const keys = [&apos;name&apos;, &apos;age&apos;, &apos;birthday&apos;]</span><br><span class="line">const values = [&apos;Codecasts, 2, &apos;2015-09&apos;]</span><br><span class="line"></span><br><span class="line">let key = 0</span><br><span class="line">const Person = &#123;</span><br><span class="line">    [keys[++key]] = values[++key]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const Person = &#123;</span><br><span class="line">    [keys.shift()] = values.shift()</span><br><span class="line">    [keys.shift()] = values.shift()</span><br><span class="line">    [keys.shift()] = values.shift()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="promise"><a href="#promise" class="headerlink" title="promise"></a>promise</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">const p = new Promise((reslove, reject) =&gt; &#123;</span><br><span class="line">    setTimeout(() =&gt; &#123;</span><br><span class="line">        reject(Error(&apos;Codecast isn\&apos;t awesome!&apos;))</span><br><span class="line">    &#125;, 2000);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">p.then(data =&gt; &#123;</span><br><span class="line">    console.log(data)</span><br><span class="line">&#125;).catch(err =&gt; &#123;</span><br><span class="line">    console.error(err)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="promise-all-promiseA-promiseB"><a href="#promise-all-promiseA-promiseB" class="headerlink" title="promise.all([promiseA, promiseB])"></a>promise.all([promiseA, promiseB])</h2><p>promise.race([promiseA, promiseB]) 由第一个promise决定调用reslove</p>
+<h2 id="Symbol-解决对象命名冲突问题"><a href="#Symbol-解决对象命名冲突问题" class="headerlink" title="Symbol 解决对象命名冲突问题"></a>Symbol 解决对象命名冲突问题</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">const peter = Symbol(&apos;peter&apos;)</span><br><span class="line">const student = Symbol(&apos;student&apos;)</span><br><span class="line">const classRoom = &#123;</span><br><span class="line">    [Symbol(&apos;lily&apos;)]: &#123; grade: 60, gender: &apos;female&apos;&#125;,</span><br><span class="line">    [Symbol(&apos;nina&apos;)]: &#123; grade: 80, gender: &apos;female&apos;&#125;,</span><br><span class="line">    [Symbol(&apos;nina&apos;)]: &#123; grade: 90, gender: &apos;female&apos;&#125;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const syms = Object.getOwnPropertySymbols(classRoom)</span><br><span class="line">console.log(syms)</span><br></pre></td></tr></table></figure>
+<h2 id="prototype-原型"><a href="#prototype-原型" class="headerlink" title="prototype 原型"></a>prototype 原型</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">function User (name, email) &#123;</span><br><span class="line">    this.name = name;</span><br><span class="line">    this.email = email;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">User.prototype.info = function () &#123;</span><br><span class="line">    console.log(`Hi, I&apos;m $&#123;this.name&#125;`)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const codecasts = new User(&apos;codecasts&apos;, &apos;i@codecasts.com&apos;)</span><br><span class="line">const laravel = new User(&apos;laravel&apos;, &apos;i@laravel.com&apos;)</span><br><span class="line"></span><br><span class="line">console.log(codecasts.info())</span><br><span class="line">console.log(laravel.info())</span><br></pre></td></tr></table></figure>
+<h2 id="class-类"><a href="#class-类" class="headerlink" title="class 类"></a>class 类</h2><p>类不存在函数提升，类没有声明之前调用会报错，函数不会<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">class User &#123;</span><br><span class="line">            constructor(name, email) &#123;</span><br><span class="line">                this.name = name;</span><br><span class="line">                this.email = email;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            info () &#123;</span><br><span class="line">                console.log(`Hi, I&apos;m $&#123;this.name&#125;, my email is $&#123;this.email&#125;`)</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            static description () &#123;</span><br><span class="line">                console.log(`I&apos;m a user of codecasts.com`)</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            set github(value) &#123;</span><br><span class="line">                this.githubName = value;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            get github () &#123;</span><br><span class="line">                return `https://github.com/$&#123;this.githubName&#125;`</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        const laravel = new User(&apos;laravel&apos;, &apos;laravel@laravel.com&apos;)</span><br><span class="line">        const xiao = new User(&apos;xiao&apos;, &apos;xiao@xiao.com&apos;)</span><br><span class="line">        const qq = new User(&apos;qq&apos;, &apos;qq@qq.com&apos;)</span><br></pre></td></tr></table></figure></p>
+<h2 id="类的继承-构造、重写、继承"><a href="#类的继承-构造、重写、继承" class="headerlink" title="类的继承(构造、重写、继承)"></a>类的继承(构造、重写、继承)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">class Animal &#123;</span><br><span class="line">    constructor (name) &#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">        this.belly = [];</span><br><span class="line">    &#125;</span><br><span class="line">    eat (food) &#123;</span><br><span class="line">        this.belly.push(food)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    speak () &#123;</span><br><span class="line">        console.log(`I&apos;m $&#123;this.name&#125;`)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Dog extends Animal &#123;</span><br><span class="line">    constructor (name, age) &#123;</span><br><span class="line">        super(name);</span><br><span class="line">        this.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    bark () &#123;</span><br><span class="line">        console.log(`Barl bark!`)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    speak () &#123;</span><br><span class="line">        console.log(`Bark bark! I&apos;m $&#123;this.name&#125;`)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="extending-Array-构建内建对象"><a href="#extending-Array-构建内建对象" class="headerlink" title="extending Array 构建内建对象"></a>extending Array 构建内建对象</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">class MyArray extends Array &#123;</span><br><span class="line">    constructor () &#123;</span><br><span class="line">        super();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">这样就将一个类转为数组来处理</span><br></pre></td></tr></table></figure>
+<h2 id="Iterator-迭代器"><a href="#Iterator-迭代器" class="headerlink" title="Iterator 迭代器"></a>Iterator 迭代器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="Generator-生成器"><a href="#Generator-生成器" class="headerlink" title="Generator 生成器"></a>Generator 生成器</h2><h2 id="generator-ajax-flow-control"><a href="#generator-ajax-flow-control" class="headerlink" title="generator-ajax-flow-control"></a>generator-ajax-flow-control</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function ajax(url) &#123;</span><br><span class="line">    axios.get(url).then(res =&gt; userGen.next(res.data))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function* steps () &#123;</span><br><span class="line">    const users = yield ajax(&apos;https://api.github.com/users&apos;);</span><br><span class="line">    const firstuser = yield ajax(`https://api.github.com/users/$&#123;users[0].login&#125;`)</span><br><span class="line">    const followers = yield ajax(firstUser.followers_url)    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const userGen = steps()</span><br><span class="line">userGen.next()</span><br><span class="line">`</span><br></pre></td></tr></table></figure>
+<h2 id="proxy"><a href="#proxy" class="headerlink" title="proxy"></a>proxy</h2><p>对目标对象的属性读取、设置，亦或函数调用等操作进行拦截（处理）。<br>对目标对象的保存或预处理<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">const person = &#123;name: &apos;laravel&apos;, age: 2000&#125;</span><br><span class="line">const personProxy = new Proxy(person, &#123;</span><br><span class="line">    get(target, key) &#123;</span><br><span class="line">        console.log(&apos;someone ask for &apos;, target, key)</span><br><span class="line">        return target[key].toUpperCase();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">personProxy.name = &apos;laravel222&apos;</span><br><span class="line"></span><br><span class="line">// (类似于laravel的访问器和修改器)-------------------------------</span><br><span class="line">const phonerHandler = &#123;</span><br><span class="line">    set(target, key, value) &#123;</span><br><span class="line">        target[key] = value.match(/[0-9]/g).join(&apos;&apos;)</span><br><span class="line">    &#125;,</span><br><span class="line">    get(target, key) &#123;</span><br><span class="line">        return target[key].replace(/(\d&#123;3&#125;)(\d&#123;4&#125;)(\d&#123;4&#125;)/, &apos;$1-$2-$3&apos;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const phoneNumber = new Proxy(&#123;&#125;, phonerHandler)</span><br></pre></td></tr></table></figure></p>
+
+            </div>
+          
+
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2012 -
+    
+    2018
+    <span class="footer-author">Xiao Lee.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a> and <a class="theme-link" href="https://github.com/henryhuang/hexo-theme-polarbearsimple">Polar Bear Simple</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="/js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=1.1"></script>
+
+  </body>
+</html>

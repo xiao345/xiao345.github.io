@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="API返回格式"/>
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/default" title="Xiao's Blog">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.1" />
+
+
+
+<link rel="canonical" href="https://xiao345.github.com/2018/09/25/response-standard/"/>
+
+
+<meta name="description" content="正常返回单体返回http 200123456&amp;#123;    &amp;quot;id&amp;quot;: 1,    &amp;quot;name&amp;quot;: &amp;quot;xiao&amp;quot;,    &amp;quot;sex&amp;quot;: 1,    &amp;quot;age&amp;quot;: 18&amp;#125; 集合返回http 200123456789101112131415161718192021&amp;#123;    &amp;qu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="API返回格式">
+<meta property="og:url" content="https://xiao345.github.com/2018/09/25/response-standard/index.html">
+<meta property="og:site_name" content="Xiao&#39;s Blog">
+<meta property="og:description" content="正常返回单体返回http 200123456&amp;#123;    &amp;quot;id&amp;quot;: 1,    &amp;quot;name&amp;quot;: &amp;quot;xiao&amp;quot;,    &amp;quot;sex&amp;quot;: 1,    &amp;quot;age&amp;quot;: 18&amp;#125; 集合返回http 200123456789101112131415161718192021&amp;#123;    &amp;qu">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-09-25T03:19:29.515Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="API返回格式">
+<meta name="twitter:description" content="正常返回单体返回http 200123456&amp;#123;    &amp;quot;id&amp;quot;: 1,    &amp;quot;name&amp;quot;: &amp;quot;xiao&amp;quot;,    &amp;quot;sex&amp;quot;: 1,    &amp;quot;age&amp;quot;: 18&amp;#125; 集合返回http 200123456789101112131415161718192021&amp;#123;    &amp;qu">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1" />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+    <title> API返回格式 - Xiao's Blog </title>
+  </head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="/." class="logo">Xiao's Blog</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="/about">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        
+  </nav>
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          API返回格式
+        
+      </h1>
+
+      <time class="post-time">
+          Sep 25 2018
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <h1 id="正常返回"><a href="#正常返回" class="headerlink" title="正常返回"></a>正常返回</h1><h2 id="单体返回"><a href="#单体返回" class="headerlink" title="单体返回"></a>单体返回</h2><p>http 200<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;id&quot;: 1,</span><br><span class="line">    &quot;name&quot;: &quot;xiao&quot;,</span><br><span class="line">    &quot;sex&quot;: 1,</span><br><span class="line">    &quot;age&quot;: 18</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="集合返回"><a href="#集合返回" class="headerlink" title="集合返回"></a>集合返回</h2><p>http 200<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;data&quot;: </span><br><span class="line">    [</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;id&quot;: 1,</span><br><span class="line">            &quot;name&quot;: &quot;xiao&quot;,</span><br><span class="line">            &quot;sex&quot;: 1,</span><br><span class="line">            &quot;age&quot;: 18</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;id&quot;: 2,</span><br><span class="line">            &quot;name&quot;: &quot;xiao2&quot;,</span><br><span class="line">            &quot;sex&quot;: 2,</span><br><span class="line">            &quot;age&quot;: 28</span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    &quot;meta&quot;: &#123;</span><br><span class="line">        &quot;total&quot;: 180,</span><br><span class="line">        &quot;current_page&quot;: 1</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="异常返回"><a href="#异常返回" class="headerlink" title="异常返回"></a>异常返回</h1><h2 id="通用异常返回"><a href="#通用异常返回" class="headerlink" title="通用异常返回"></a>通用异常返回</h2><p>http 400<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	&quot;code&quot;: 4000,				//状态码，不等于200均为异常返回</span><br><span class="line">	&quot;message&quot;: &quot;操作失败&quot;,		//信息，指示异常的原因</span><br><span class="line">	&quot;debug&quot;: &#123;&#125;					//调试状态下会有debug数据</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="数据验证错误异常返回"><a href="#数据验证错误异常返回" class="headerlink" title="数据验证错误异常返回"></a>数据验证错误异常返回</h2><p>http 403<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	&quot;code&quot;: 4003,</span><br><span class="line">	&quot;message&quot;: &quot;数据验证失败&quot;,</span><br><span class="line">	&quot;errors&quot;: &#123;</span><br><span class="line">		&quot;username&quot;: [</span><br><span class="line">			&quot;用户名 不能为空。&quot;</span><br><span class="line">		],</span><br><span class="line">		&quot;password&quot;: [</span><br><span class="line">			&quot;密码 不能为空。&quot;</span><br><span class="line">		],</span><br><span class="line">		&quot;email&quot;: [</span><br><span class="line">			&quot;邮箱 不能为空。&quot;</span><br><span class="line">		],</span><br><span class="line">		&quot;name&quot;: [</span><br><span class="line">			&quot;名称 不能为空。&quot;</span><br><span class="line">		]</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h1 id="错误码表（待修改）"><a href="#错误码表（待修改）" class="headerlink" title="错误码表（待修改）"></a>错误码表（待修改）</h1><table>
+<thead>
+<tr>
+<th>错误码</th>
+<th>错误描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>成功或正常</td>
+</tr>
+<tr>
+<td>429</td>
+<td>访问过于频繁</td>
+</tr>
+<tr>
+<td>4000</td>
+<td>未知错误</td>
+</tr>
+<tr>
+<td>4001</td>
+<td>未登录或登录状态已超时</td>
+</tr>
+<tr>
+<td>4002</td>
+<td>认证失败</td>
+</tr>
+<tr>
+<td>4003</td>
+<td>数据验证失败</td>
+</tr>
+<tr>
+<td>4004</td>
+<td>登录失败</td>
+</tr>
+<tr>
+<td>4005</td>
+<td>令牌过期</td>
+</tr>
+<tr>
+<td>4006</td>
+<td>令牌无效</td>
+</tr>
+<tr>
+<td>4007</td>
+<td>令牌数据错误</td>
+</tr>
+<tr>
+<td>4008</td>
+<td>没有权限</td>
+</tr>
+<tr>
+<td>4009</td>
+<td>令牌已被黑名单</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>前端开发人员注意：<br>前端开发人员无需枚举此码表的描述，因为此描述信息会在接口中返回。但开发人员需处理特定的错误码，例如：4005错误为令牌过期，对于此错误的处理应为刷新令牌。以此类推。</li>
+</ul>
+
+            </div>
+          
+
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2012 -
+    
+    2018
+    <span class="footer-author">Xiao Lee.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a> and <a class="theme-link" href="https://github.com/henryhuang/hexo-theme-polarbearsimple">Polar Bear Simple</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="/js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=1.1"></script>
+
+  </body>
+</html>

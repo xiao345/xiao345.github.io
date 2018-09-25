@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="description" content="vuepress"/>
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/default" title="Xiao's Blog">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=1.1" />
+
+
+
+<link rel="canonical" href="https://xiao345.github.com/2018/09/25/vuepress/"/>
+
+
+<meta name="description" content="今天看到一个好用的文档生成器, 记录一下使用方法.  vuepress.vuejs.org 安装1yarn global add vuepress # 或者：npm install -g vuepress 新建一个 markdown 文件1echo &amp;apos;# Hello VuePress!&amp;apos; &amp;gt; README.md 在目录下创建文件或文件夹, 所有文件以.md格式来写 开始">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vuepress">
+<meta property="og:url" content="https://xiao345.github.com/2018/09/25/vuepress/index.html">
+<meta property="og:site_name" content="Xiao&#39;s Blog">
+<meta property="og:description" content="今天看到一个好用的文档生成器, 记录一下使用方法.  vuepress.vuejs.org 安装1yarn global add vuepress # 或者：npm install -g vuepress 新建一个 markdown 文件1echo &amp;apos;# Hello VuePress!&amp;apos; &amp;gt; README.md 在目录下创建文件或文件夹, 所有文件以.md格式来写 开始">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-09-25T03:20:58.590Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="vuepress">
+<meta name="twitter:description" content="今天看到一个好用的文档生成器, 记录一下使用方法.  vuepress.vuejs.org 安装1yarn global add vuepress # 或者：npm install -g vuepress 新建一个 markdown 文件1echo &amp;apos;# Hello VuePress!&amp;apos; &amp;gt; README.md 在目录下创建文件或文件夹, 所有文件以.md格式来写 开始">
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=1.1" />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+
+
+
+
+
+<script type="text/javascript">
+  var themeConfig = {
+    fancybox: {
+      enable: false
+    },
+  };
+</script>
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+    <title> vuepress - Xiao's Blog </title>
+  </head>
+
+  <body>
+    <div id="page">
+      <header id="masthead"><div class="site-header-inner">
+    <h1 class="site-title">
+        <a href="/." class="logo">Xiao's Blog</a>
+    </h1>
+
+    <nav id="nav-top">
+        
+            <ul id="menu-top" class="nav-top-items">
+                
+                    <li class="menu-item">
+                        <a href="/about">
+                            
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        
+  </nav>
+</div>
+
+      </header>
+      <div id="content">
+        
+    <div id="primary">
+        
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          vuepress
+        
+      </h1>
+
+      <time class="post-time">
+          Sep 25 2018
+      </time>
+    </header>
+
+
+
+    
+            <div class="post-content">
+            <blockquote>
+<p>今天看到一个好用的文档生成器, 记录一下使用方法.</p>
+</blockquote>
+<p><code>vuepress.vuejs.org</code></p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn global add vuepress # 或者：npm install -g vuepress</span><br></pre></td></tr></table></figure>
+<h1 id="新建一个-markdown-文件"><a href="#新建一个-markdown-文件" class="headerlink" title="新建一个 markdown 文件"></a>新建一个 markdown 文件</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &apos;# Hello VuePress!&apos; &gt; README.md</span><br></pre></td></tr></table></figure>
+<p>在目录下创建文件或文件夹, 所有文件以.md格式来写</p>
+<h1 id="开始写作"><a href="#开始写作" class="headerlink" title="开始写作"></a>开始写作</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vuepress dev .</span><br></pre></td></tr></table></figure>
+<h1 id="构建静态文件"><a href="#构建静态文件" class="headerlink" title="构建静态文件"></a>构建静态文件</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vuepress build .</span><br></pre></td></tr></table></figure>
+<h1 id="build之后"><a href="#build之后" class="headerlink" title="build之后"></a>build之后</h1><p>在.vuepress 里创建config.js文件<br>根据文档做相应配置</p>
+<h1 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h1><p>Dockerfile</p>
+<ol>
+<li>node</li>
+<li>装vuepress</li>
+<li>vuepress build</li>
+<li>run ..</li>
+</ol>
+
+            </div>
+          
+
+    
+  </article>
+
+    </div>
+
+      </div>
+
+      <footer id="colophon"><span class="copyright-year">
+    
+        &copy;
+    
+        2012 -
+    
+    2018
+    <span class="footer-author">Xiao Lee.</span>
+    <span class="power-by">
+        Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a> and <a class="theme-link" href="https://github.com/henryhuang/hexo-theme-polarbearsimple">Polar Bear Simple</a>
+    </span>
+</span>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+    
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="/js/src/theme.js?v=1.1"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=1.1"></script>
+
+  </body>
+</html>
